@@ -15,6 +15,6 @@ celebsRoutes(router);
 
 app.use('/api/v1', router);
 
-http.createServer(app).listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log('The server is listening on port ' + (process.env.PORT || 3000));
 });

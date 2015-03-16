@@ -18,7 +18,6 @@ module.exports = function(grunt) {
             it: true,
             before: true,
             after: true,
-            angular: true,
             beforeEach: true,
             expect: true
           }
@@ -65,7 +64,7 @@ module.exports = function(grunt) {
         dest: 'test/karma-tests/karma-test-bundle.js'
       },
       options: {
-        transform: ['debowerify']
+        transform: ['reactify', 'debowerify']
       }
     },
 

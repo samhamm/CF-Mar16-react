@@ -1,11 +1,11 @@
 {
-  "name": "3-9-angular-express-api",
+  "name": "3-16-react",
   "version": "1.0.0",
-  "homepage": "https://github.com/samhamm/CF-Mar9-angular-express-api",
+  "homepage": "https://github.com/samhamm/CF-Mar16-react",
   "authors": [
     "Sam Hamm <samhamm@gmail.com>"
   ],
-  "description": "Assignment for Code Fellows JavaScript Development Accelerator (Create a single resource rest API with Express and MongoDB and a client side built using Angular.)",
+  "description": "Assignment for Code Fellows JavaScript Development Accelerator: Use React.js to build a client side CRUD (the create and read portion anyway) app for your single resource JSON api.)",
   "main": "server.js",
   "license": "MIT",
   "private": true,
@@ -17,12 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.3",
-    "chai": "~2.1.0",
-    "angular": "~1.3.14"
-  },
-  "devDependencies": {
-    "chai": "~2.1.0",
-    "angular-mocks": "~1.3.14"
+    "react": "~0.13.0",
+    "jquery": "~2.1.3"
   }
 }

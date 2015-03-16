@@ -1,7 +1,7 @@
 {
-  "name": "3-9-angular-express-api",
+  "name": "CF-Mar16-react",
   "version": "1.0.0",
-  "description": "Assignment for Code Fellows JavaScript Development Accelerator (Create a single resource rest API with Express and MongoDB and a client side built using Angular.)",
+  "description": "Assignment for Code Fellows JavaScript Development Accelerator: Use React.js to build a client side CRUD (the create and read portion anyway) app for your single resource JSON api.)",
   "main": "server.js",
   "directories": {
     "test": "test"
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/samhamm/CF-Mar9-angular-express-api"
+    "url": "https://github.com/samhamm/CF-Mar16-react"
   },
   "author": "Sam Hamm <samhamm@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/samhamm/CF-Mar9-angular-express-api/issues"
+    "url": "https://github.com/samhamm/CF-Mar16-react/issues"
   },
-  "homepage": "https://github.com/samhamm/CF-Mar9-angular-express-api",
+  "homepage": "https://github.com/samhamm/CF-Mar16-react",
   "devDependencies": {
     "chai": "^2.1.1",
     "chai-http": "^1.0.0",
@@ -30,19 +30,18 @@
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-karma": "^0.10.1",
-    "grunt-shell": "^1.1.2",
     "grunt-simple-mocha": "^0.4.0",
     "jasmine-core": "^2.2.0",
     "karma": "^0.12.31",
     "karma-firefox-launcher": "^0.1.4",
     "karma-jasmine": "^0.3.5",
     "karma-phantomjs-launcher": "^0.1.4",
-    "mocha": "^2.2.0"
+    "mocha": "^2.2.0",
+    "reactify": "^1.1.0"
   },
   "dependencies": {
     "body-parser": "^1.12.0",
     "express": "^4.12.2",
-    "http": "0.0.0",
     "mongoose": "^3.8.24"
   }
 }
