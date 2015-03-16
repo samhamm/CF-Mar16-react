@@ -15,8 +15,19 @@ var CelebForm = React.createClass({
   getInitialState: function() {
     return {newCeleb: {handle: '', category: '', deathDate: ''}};
   },
-  profileChange: function(event) {
-    this.setState({newCeleb: {handle: event.target.value, category: event.target.value, deathDate: event.target.value}});
+  // profileChange copies one field data across all
+  // profileChange: function(event) {
+  //   this.setState({newCeleb: {handle: event.target.value, category: event.target.value, deathDate: event.target.value}});
+  },
+  using these lets me put data in right fields, but only 1 at a time
+  handleChange: function(event) {
+    this.setState({newCeleb: {handle: event.target.value}});
+  },
+  categoryChange: function(event) {
+    this.setState({newCeleb: {category: event.target.value}});
+  },
+  deathDateChange: function(event) {
+    this.setState({newCeleb: {deathDate: event.target.value}});
   },
   profileSubmit: function(event) {
     event.preventDefault();
@@ -29,6 +40,7 @@ var CelebForm = React.createClass({
       data: JSON.stringify(newCeleb),
       success: function(data) {
         this.props.onNewCelebSubmit(data);
+        // the next line clears the form after hitting submit button
         this.setState({newCeleb: {handle: '', category: '', deathDate: ''}});
       }.bind(this),
       error: function(xhr, status, err) {
@@ -38,18 +50,16 @@ var CelebForm = React.createClass({
   },
   render: function() {
     return (
-      // <h1>CelebriDeath Data Entry Form</h1>
 
       <form onSubmit={this.profileSubmit}>
+        <p><label htmlFor="new-handle">Handle: </label>
+        <input id="new-handle" type="text" value={this.state.newCeleb.handle} onChange={this.profileChange} /></p>
 
-        <p><label htmlFor="newceleb">Handle: </label>
-        <input id="newceleb" type="text" value={this.state.newCeleb.handle} onChange={this.profileChange}/></p>
+        <p><label htmlFor="new-category">Category: </label>
+        <input id="new-category" type="text" value={this.state.newCeleb.category} onChange={this.profileChange} /></p>
 
-        <p><label htmlFor="newceleb">Category: </label>
-        <input id="newceleb" type="text" value={this.state.newCeleb.category} onChange={this.profileChange}/></p>
-
-        <p><label htmlFor="newceleb">Death: </label>
-        <input id="newceleb" type="text" value={this.state.newCeleb.deathDate} onChange={this.profileChange}/></p>
+        <p><label htmlFor="new-deathDate">Death: </label>
+        <input id="new-deathDate" type="text" value={this.state.newCeleb.deathDate} onChange={this.profileChange} /></p>
 
         <button type="submit">Create New Celebrity</button>
       </form>
