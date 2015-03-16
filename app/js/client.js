@@ -3,22 +3,22 @@
 var React = require('react');
 var ajax = require('jquery').ajax;
 
-var celebsData = [{handle: 'hello world', _id: 1}, {handle: 'goodbye world', _id: 2}];
+var celebsData = [{handle: 'John F. Kennedy', category: 'politician', deathDate: 19631122, _id: 1}, {handle: 'hello world', _id: 2}];
 
 var Celeb = React.createClass({
   render: function() {
-    return <li>{this.props.data.handle}</li>
+    return <li>{this.props.data.handle, this.props.data.category, this.props.data.deathDate}</li>
   }
 });
 
 var CelebForm = React.createClass({
   getInitialState: function() {
-    return {newCeleb: {handle: ''}};
+    return {newCeleb: {handle: '', category: '', deathDate: ''}};
   },
-  handleChange: function(event) {
-    this.setState({newCeleb: {handle: event.target.value}});
+  profileChange: function(event) {
+    this.setState({newCeleb: {handle: event.target.value, category: event.target.value, deathDate: event.target.value}});
   },
-  handleSubmit: function(event) {
+  profileSubmit: function(event) {
     event.preventDefault();
     console.log(this.state.newCeleb);
     var newCeleb = this.state.newCeleb;
@@ -29,7 +29,7 @@ var CelebForm = React.createClass({
       data: JSON.stringify(newCeleb),
       success: function(data) {
         this.props.onNewCelebSubmit(data);
-        this.setState({newCeleb: {handle: ''}});
+        this.setState({newCeleb: {handle: '', category: '', deathDate: ''}});
       }.bind(this),
       error: function(xhr, status, err) {
         console.log(err);
@@ -40,16 +40,16 @@ var CelebForm = React.createClass({
     return (
       // <h1>CelebriDeath Data Entry Form</h1>
 
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.profileSubmit}>
 
         <p><label htmlFor="newceleb">Handle: </label>
-        <input id="newceleb" type="text" value={this.state.newCeleb.handle} onChange={this.handleChange}/></p>
+        <input id="newceleb" type="text" value={this.state.newCeleb.handle} onChange={this.profileChange}/></p>
 
         <p><label htmlFor="newceleb">Category: </label>
-        <input id="newceleb" type="text" value={this.state.newCeleb.category} onChange={this.categoryChange}/></p>
+        <input id="newceleb" type="text" value={this.state.newCeleb.category} onChange={this.profileChange}/></p>
 
         <p><label htmlFor="newceleb">Death: </label>
-        <input id="newceleb" type="text" value={this.state.newCeleb.deathDate} onChange={this.deathDateChange}/></p>
+        <input id="newceleb" type="text" value={this.state.newCeleb.deathDate} onChange={this.profileChange}/></p>
 
         <button type="submit">Create New Celebrity</button>
       </form>
