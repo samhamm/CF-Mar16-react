@@ -38,10 +38,20 @@ var CelebForm = React.createClass({
   },
   render: function() {
     return (
+      // <h1>CelebriDeath Data Entry Form</h1>
+
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="newceleb">New Celeb</label>
-        <input id="newceleb" type="text" value={this.state.newCeleb.handle} onChange={this.handleChange}/>
-        <button type="submit">Create New Celeb</button>
+
+        <p><label htmlFor="newceleb">Handle: </label>
+        <input id="newceleb" type="text" value={this.state.newCeleb.handle} onChange={this.handleChange}/></p>
+
+        <p><label htmlFor="newceleb">Category: </label>
+        <input id="newceleb" type="text" value={this.state.newCeleb.category} onChange={this.categoryChange}/></p>
+
+        <p><label htmlFor="newceleb">Death: </label>
+        <input id="newceleb" type="text" value={this.state.newCeleb.deathDate} onChange={this.deathDateChange}/></p>
+
+        <button type="submit">Create New Celebrity</button>
       </form>
     )
   }
@@ -54,7 +64,7 @@ var CelebList = React.createClass({
     });
     return (
       <section>
-        <h1>Celebs:</h1>
+        <h1>Dead Celebrities Already Entered:</h1>
         <ul>
           {celebs}
         </ul>
