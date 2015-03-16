@@ -1,34 +1,42 @@
 'use strict';
 
-require('angular/angular');
-require('angular-route');
+var React = require('react');
 
-var notesApp = angular.module('notesApp', ['ngRoute']);
+var notesData = [{noteBody: 'hello world', _id: 1}, {noteBody: 'goodbye world', _id: 2}];
 
-//services
-require('./services/resource_service')(notesApp);
+var Note = React.createClass({
+  render: function() {
+    return <li>{this.props.data.noteBody}</li>
+  }
+});
 
-//controllers
-require('./notes/controllers/notes_controller')(notesApp);
+var NoteList = React.createClass({
+  render: function() {
+    var notes = this.props.data.map(function(note) {
+      return <Note data={note} key={note._id}/>
+    });
+    return (
+      <section>
+        <h1>Notes:</h1>
+        <ul>
+          {notes}
+        </ul>
+      </section>
+    )
+  }
+});
 
-//directives
-require('./directives/dummy_directive')(notesApp);
-require('./directives/create_resource_directive')(notesApp);
-require('./notes/directives/create_note_directive_one')(notesApp);
+var App = React.createClass({
+  getInitialState: function() {
+    return {notesData: notesData};
+  },
+  render: function() {
+    return (
+      <main>
+        <NoteList data={this.state.notesData} />
+      </main>
+    )
+  }
+});
 
-notesApp.config(['$routeProvider', function($routeProvider) {
-  $routeProvider
-  .when('/notes', {
-    templateUrl: 'templates/notes/notes_template.html',
-    controller: 'notesController'
-  })
-  .when('/about', {
-    templateUrl: 'templates/about.html'
-  })
-  .when('/', {
-    redirectTo: '/notes'
-  })
-  .otherwise({
-    templateUrl: 'templates/four_oh_four.html'
-  })
-}]);
+React.render(<App />, document.body);
