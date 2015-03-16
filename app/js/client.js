@@ -2,24 +2,24 @@
 
 var React = require('react');
 
-var notesData = [{noteBody: 'hello world', _id: 1}, {noteBody: 'goodbye world', _id: 2}];
+var celebsData = [{celebBody: 'hello world', _id: 1}, {celebBody: 'goodbye world', _id: 2}];
 
-var Note = React.createClass({
+var Celeb = React.createClass({
   render: function() {
-    return <li>{this.props.data.noteBody}</li>
+    return <li>{this.props.data.celebBody}</li>
   }
 });
 
-var NoteList = React.createClass({
+var CelebList = React.createClass({
   render: function() {
-    var notes = this.props.data.map(function(note) {
-      return <Note data={note} key={note._id}/>
+    var celebs = this.props.data.map(function(celeb) {
+      return <Celeb data={celeb} key={celeb._id}/>
     });
     return (
       <section>
-        <h1>Notes:</h1>
+        <h1>Celebs:</h1>
         <ul>
-          {notes}
+          {celebs}
         </ul>
       </section>
     )
@@ -28,12 +28,12 @@ var NoteList = React.createClass({
 
 var App = React.createClass({
   getInitialState: function() {
-    return {notesData: notesData};
+    return {celebsData: celebsData};
   },
   render: function() {
     return (
       <main>
-        <NoteList data={this.state.notesData} />
+        <CelebList data={this.state.celebsData} />
       </main>
     )
   }
