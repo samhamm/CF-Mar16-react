@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 
 var celebSchema = new mongoose.Schema({
-  handle: String,
+  moniker: String,
   category: String,
   deathDate: String
 });
