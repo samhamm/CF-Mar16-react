@@ -2,7 +2,7 @@
   "name": "CF-Mar16-react",
   "version": "1.0.0",
   "description": "Assignment for Code Fellows JavaScript Development Accelerator: Use React.js to build a client side CRUD (the create and read portion anyway) app for your single resource JSON api.)",
-  "main": "server.js",
+  "main": "build/index.html",
   "directories": {
     "test": "test"
   },
