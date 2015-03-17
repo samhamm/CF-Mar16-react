@@ -14,7 +14,7 @@ var router = express.Router();
 
 celebsRoutes(router);
 
-app.use('/', router);
+app.use('/app', router);
 
 http.createServer(app).listen(process.env.PORT || 3000, function() {
   console.log('The server is listening on port ' + (process.env.PORT || 3000));
