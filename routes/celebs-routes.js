@@ -5,7 +5,7 @@ var bodyparser = require('body-parser');
 module.exports = function(app) {
   app.use(bodyparser.json());
 
-  app.get('/celebs', function(req, res) {
+  app.get('celebs/', function(req, res) {
     Celeb.find({}, function(err, data) {
       if (err) return res.status(500).send({'msg': 'could not retrieve celebs'});
 
@@ -13,7 +13,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/celebs', function(req, res) {
+  app.post('celebs/', function(req, res) {
     var newCeleb = new Celeb(req.body);
     newCeleb.save(function(err, celeb) {
       if (err) return res.status(500).send({'msg': 'could not save celeb'});
@@ -22,7 +22,7 @@ module.exports = function(app) {
     });
   });
 
-  app.put('/celebs/:id', function(req, res) {
+  app.put('celebs/:id', function(req, res) {
     var updatedCeleb = req.body;
     delete updatedCeleb._id;
     Celeb.update({_id: req.params.id}, updatedCeleb, function(err) {
@@ -32,7 +32,7 @@ module.exports = function(app) {
     });
   });
 
-  app.delete('/celebs/:id', function(req, res) {
+  app.delete('celebs/:id', function(req, res) {
     Celeb.remove({_id: req.params.id}, function(err) {
       if (err) return res.status(500).send({'msg': 'could not delete'});
 
