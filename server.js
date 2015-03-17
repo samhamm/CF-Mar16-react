@@ -1,6 +1,7 @@
 'use strict';
 
 var express = require('express');
+var http = require('http');
 var mongoose = require('mongoose');
 var celebsRoutes = require('./routes/celebs-routes');
 
@@ -15,6 +16,6 @@ celebsRoutes(router);
 
 app.use('/api/v1', router);
 
-app.listen(process.env.PORT || 3000, function() {
+http.createServer(app).listen(process.env.PORT || 3000, function() {
   console.log('The server is listening on port ' + (process.env.PORT || 3000));
 });
