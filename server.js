@@ -5,7 +5,7 @@ var http = require('http');
 var mongoose = require('mongoose');
 var celebsRoutes = require('./routes/celebs-routes');
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/db-cel');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/db-cel');
 
 var app = express();
 app.use(express.static(__dirname + '/build'));
