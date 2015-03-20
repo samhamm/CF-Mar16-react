@@ -9,7 +9,7 @@ var celebsData = [{moniker: 'John F. Kennedy', category: 'politician', deathDate
 var Celeb = React.createClass({displayName: "Celeb",
 
   render: function() {
-    return React.createElement("li", null, React.createElement("span", null, this.props.data.moniker + ' • '), React.createElement("span", null, this.props.data.category1 + ' • '), this.props.data.deathDate)
+    return React.createElement("li", null, React.createElement("span", null, this.props.data.moniker + ' • '), React.createElement("span", null, this.props.data.category1 + ' • '), this.props.data.death)
   }
 });
 
