@@ -28,13 +28,11 @@ var CelebForm = React.createClass({
       stateCopy.newCeleb.category2 = event.target.value;
     if (event.target.name === 'new-category3')
       stateCopy.newCeleb.category3 = event.target.value;
-    if (event.target.name === 'new-deathDate')
-      stateCopy.newCeleb.deathDate = event.target.value;
     if (event.target.name === 'new-lastName')
       stateCopy.newCeleb.lastName = event.target.value;
     if (event.target.name === 'new-firstName')
       stateCopy.newCeleb.firstName = event.target.value;
-    if (event.target.name === 'middleName')
+    if (event.target.name === 'new-middleName')
       stateCopy.newCeleb.middleName = event.target.value;
     if (event.target.name === 'new-suffix')
       stateCopy.newCeleb.suffix = event.target.value;
@@ -44,19 +42,17 @@ var CelebForm = React.createClass({
       stateCopy.newCeleb.death = event.target.value;
     if (event.target.name === 'new-age')
       stateCopy.newCeleb.age = event.target.value;
-    if (event.target.name === 'bio')
+    if (event.target.name === 'new-bio')
       stateCopy.newCeleb.bio = event.target.value;
-    if (event.target.name === 'new-headshotLink')
-      stateCopy.newCeleb.headshotLink = event.target.value;
+    if (event.target.name === 'new-photoLink')
+      stateCopy.newCeleb.photoLink = event.target.value;
     if (event.target.name === 'new-burialCoords')
       stateCopy.newCeleb.burialCoords = event.target.value;
     if (event.target.name === 'new-burialAddy')
       stateCopy.newCeleb.burialAddy = event.target.value;
     if (event.target.name === 'new-burialCity')
       stateCopy.newCeleb.burialCity = event.target.value;
-    if (event.target.name === 'new-deathDate')
-      stateCopy.newCeleb.deathDate = event.target.value;
-    if (event.target.name === 'burialState')
+    if (event.target.name === 'new-burialState')
       stateCopy.newCeleb.burialState = event.target.value;
     if (event.target.name === 'new-burialZIP')
       stateCopy.newCeleb.burialZIP = event.target.value;
@@ -64,7 +60,7 @@ var CelebForm = React.createClass({
       stateCopy.newCeleb.burialCountry = event.target.value;
     if (event.target.name === 'new-burialFacility')
       stateCopy.newCeleb.burialFacility = event.target.value;
-    if (event.target.name === 'howDied')
+    if (event.target.name === 'new-howDied')
       stateCopy.newCeleb.howDied = event.target.value;
     this.setState(stateCopy);
   },
@@ -153,8 +149,8 @@ var CelebForm = React.createClass({
         <p><label htmlFor="new-burialFacility">Grave - Facility: </label>
         <input id="new-burialFacility" type="text" value={this.state.newCeleb.burialFacility} onChange={this.profileChange} name="new-burialFacility" /> (Westwood Village Memorial Park Cemetery)</p>
 
-        <p><label htmlFor="new-death">How Died: </label>
-        <input id="new-death" type="text" value={this.state.newCeleb.death} onChange={this.profileChange} name="new-death" /> (Overdose)</p>
+        <p><label htmlFor="new-howDied">How Died: </label>
+        <input id="new-howDied" type="text" value={this.state.newCeleb.howDied} onChange={this.profileChange} name="new-howDied" /> (Overdose)</p>
 
         <button type="submit">Create New Celebrity</button>
       </form>
