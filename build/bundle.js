@@ -9,7 +9,7 @@ var celebsData = [{moniker: 'John F. Kennedy', category: 'politician', deathDate
 var Celeb = React.createClass({displayName: "Celeb",
 
   render: function() {
-    return React.createElement("li", null, React.createElement("span", null, this.props.data.moniker + ' • '), React.createElement("span", null, this.props.data.category + ' • '), this.props.data.deathDate)
+    return React.createElement("li", null, React.createElement("span", null, this.props.data.moniker + ' • '), React.createElement("span", null, this.props.data.category1 + ' • '), this.props.data.deathDate)
   }
 });
 
@@ -23,10 +23,50 @@ var CelebForm = React.createClass({displayName: "CelebForm",
     var stateCopy = this.state;
     if (event.target.name === 'new-moniker')
       stateCopy.newCeleb.moniker = event.target.value;
-    if (event.target.name === 'new-category')
-      stateCopy.newCeleb.category = event.target.value;
+    if (event.target.name === 'new-category1')
+      stateCopy.newCeleb.category1 = event.target.value;
+    if (event.target.name === 'new-category2')
+      stateCopy.newCeleb.category2 = event.target.value;
+    if (event.target.name === 'new-category3')
+      stateCopy.newCeleb.category3 = event.target.value;
     if (event.target.name === 'new-deathDate')
       stateCopy.newCeleb.deathDate = event.target.value;
+    if (event.target.name === 'new-lastName')
+      stateCopy.newCeleb.lastName = event.target.value;
+    if (event.target.name === 'new-firstName')
+      stateCopy.newCeleb.firstName = event.target.value;
+    if (event.target.name === 'middleName')
+      stateCopy.newCeleb.middleName = event.target.value;
+    if (event.target.name === 'new-suffix')
+      stateCopy.newCeleb.suffix = event.target.value;
+    if (event.target.name === 'new-birth')
+      stateCopy.newCeleb.birth = event.target.value;
+    if (event.target.name === 'new-death')
+      stateCopy.newCeleb.death = event.target.value;
+    if (event.target.name === 'new-age')
+      stateCopy.newCeleb.age = event.target.value;
+    if (event.target.name === 'bio')
+      stateCopy.newCeleb.bio = event.target.value;
+    if (event.target.name === 'new-headshotLink')
+      stateCopy.newCeleb.headshotLink = event.target.value;
+    if (event.target.name === 'new-burialCoords')
+      stateCopy.newCeleb.burialCoords = event.target.value;
+    if (event.target.name === 'new-burialAddy')
+      stateCopy.newCeleb.burialAddy = event.target.value;
+    if (event.target.name === 'new-burialCity')
+      stateCopy.newCeleb.burialCity = event.target.value;
+    if (event.target.name === 'new-deathDate')
+      stateCopy.newCeleb.deathDate = event.target.value;
+    if (event.target.name === 'burialState')
+      stateCopy.newCeleb.burialState = event.target.value;
+    if (event.target.name === 'new-burialZIP')
+      stateCopy.newCeleb.burialZIP = event.target.value;
+    if (event.target.name === 'new-burialCountry')
+      stateCopy.newCeleb.burialCountry = event.target.value;
+    if (event.target.name === 'new-burialFacility')
+      stateCopy.newCeleb.burialFacility = event.target.value;
+    if (event.target.name === 'howDied')
+      stateCopy.newCeleb.howDied = event.target.value;
     this.setState(stateCopy);
   },
 
@@ -55,13 +95,67 @@ var CelebForm = React.createClass({displayName: "CelebForm",
 
       React.createElement("form", {onSubmit: this.profileSubmit}, 
         React.createElement("p", null, React.createElement("label", {htmlFor: "new-moniker"}, "Moniker: "), 
-        React.createElement("input", {id: "new-moniker", type: "text", value: this.state.newCeleb.moniker, onChange: this.profileChange, name: "new-moniker"})), 
+        React.createElement("input", {id: "new-moniker", type: "text", value: this.state.newCeleb.moniker, onChange: this.profileChange, name: "new-moniker"}), " (Marilyn Monroe)"), 
 
-        React.createElement("p", null, React.createElement("label", {htmlFor: "new-category"}, "Category: "), 
-        React.createElement("input", {id: "new-category", type: "text", value: this.state.newCeleb.category, onChange: this.profileChange, name: "new-category"})), 
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-category1"}, "Category 1: "), 
+        React.createElement("input", {id: "new-category1", type: "text", value: this.state.newCeleb.category1, onChange: this.profileChange, name: "new-category1"}), " (Actor)"), 
 
-        React.createElement("p", null, React.createElement("label", {htmlFor: "new-deathDate"}, "Death: "), 
-        React.createElement("input", {id: "new-deathDate", type: "text", value: this.state.newCeleb.deathDate, onChange: this.profileChange, name: "new-deathDate"})), 
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-category2"}, "Category 2: "), 
+        React.createElement("input", {id: "new-category2", type: "text", value: this.state.newCeleb.category2, onChange: this.profileChange, name: "new-category2"}), " (Model)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-category3"}, "Category 3: "), 
+        React.createElement("input", {id: "new-category3", type: "text", value: this.state.newCeleb.category3, onChange: this.profileChange, name: "new-category3"}), " (Wife of Joe DiMaggio and Arthur Miller)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-lastName"}, "Last Name: "), 
+        React.createElement("input", {id: "new-lastName", type: "text", value: this.state.newCeleb.lastName, onChange: this.profileChange, name: "new-lastName"}), " (Mortenson)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-firstName"}, "First Name: "), 
+        React.createElement("input", {id: "new-firstName", type: "text", value: this.state.newCeleb.firstName, onChange: this.profileChange, name: "new-firstName"}), " (Norma)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-middleName"}, "Middle Name: "), 
+        React.createElement("input", {id: "new-middleName", type: "text", value: this.state.newCeleb.middleName, onChange: this.profileChange, name: "new-middleName"}), " (Jeane)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-suffix"}, "Suffix: "), 
+        React.createElement("input", {id: "new-suffix", type: "text", value: this.state.newCeleb.suffix, onChange: this.profileChange, name: "new-suffix"}), " ( )"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-birth"}, "Birth: "), 
+        React.createElement("input", {id: "new-birth", type: "text", value: this.state.newCeleb.birth, onChange: this.profileChange, name: "new-birth"}), " (19260601) YYYYMMDD"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-death"}, "Death: "), 
+        React.createElement("input", {id: "new-death", type: "text", value: this.state.newCeleb.death, onChange: this.profileChange, name: "new-death"}), " (19620805) YYYYMMDD"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-age"}, "Age: "), 
+        React.createElement("input", {id: "new-age", type: "text", value: this.state.newCeleb.age, onChange: this.profileChange, name: "new-age"}), " (36)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-death"}, "Bio: "), 
+        React.createElement("input", {id: "new-bio", type: "text", value: this.state.newCeleb.bio, onChange: this.profileChange, name: "new-bio"}), " (Just cut and paste the first paragraph of Wikipedia for now)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-photoLink"}, "Photo Link: "), 
+        React.createElement("input", {id: "new-photoLink", type: "text", value: this.state.newCeleb.photoLink, onChange: this.profileChange, name: "new-photoLink"}), "  (\"http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Marilyn_Monroe_-_publicity.JPG/220px-Marilyn_Monroe_-_publicity.JPG\")"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-burialCoords"}, "Grave - Coordinates: "), 
+        React.createElement("input", {id: "new-burialCoords", type: "text", value: this.state.newCeleb.burialCoords, onChange: this.profileChange, name: "new-burialCoords"}), " (34.05847, -118.43979)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-burialAddy"}, "Grave - Address: "), 
+        React.createElement("input", {id: "new-burialAddy", type: "text", value: this.state.newCeleb.burialAddy, onChange: this.profileChange, name: "new-burialAddy"}), " (1218 Glendon Avenue)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-burialCity"}, "Grave - City: "), 
+        React.createElement("input", {id: "new-burialCity", type: "text", value: this.state.newCeleb.burialCity, onChange: this.profileChange, name: "new-burialCity"}), " (Los Angeles)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-burialState"}, "Grave - State: "), 
+        React.createElement("input", {id: "new-burialState", type: "text", value: this.state.newCeleb.burialState, onChange: this.profileChange, name: "new-burialState"}), " (CA)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-burialZIP"}, "Grave - ZIP: "), 
+        React.createElement("input", {id: "new-burialZIP", type: "text", value: this.state.newCeleb.burialZIP, onChange: this.profileChange, name: "new-burialZIP"}), " (90024)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-burialCountry"}, "Grave - Country: "), 
+        React.createElement("input", {id: "new-burialCountry", type: "text", value: this.state.newCeleb.burialCountry, onChange: this.profileChange, name: "new-burialCountry"}), " (USA)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-burialFacility"}, "Grave - Facility: "), 
+        React.createElement("input", {id: "new-burialFacility", type: "text", value: this.state.newCeleb.burialFacility, onChange: this.profileChange, name: "new-burialFacility"}), " (Westwood Village Memorial Park Cemetery)"), 
+
+        React.createElement("p", null, React.createElement("label", {htmlFor: "new-death"}, "How Died: "), 
+        React.createElement("input", {id: "new-death", type: "text", value: this.state.newCeleb.death, onChange: this.profileChange, name: "new-death"}), " (Overdose)"), 
 
         React.createElement("button", {type: "submit"}, "Create New Celebrity")
       )
