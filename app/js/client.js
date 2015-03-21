@@ -89,6 +89,10 @@ var CelebForm = React.createClass({
     return (
 
       <form onSubmit={this.profileSubmit}>
+        <h3>Data Entry Instructions</h3>
+        <h4>1. Most data can be pulled from Wikipedia and www.findagrave.com; do not worry about giving citations.</h4>
+        <h4>2. For the coordinates, look for them inside the link on Google Maps. Will look something like the example below.</h4>
+        <h4>3. THANKS! Every little bit helps. We can edit later.</h4>
         <p><label htmlFor="new-moniker">Moniker: </label>
         <input id="new-moniker" type="text" value={this.state.newCeleb.moniker} onChange={this.profileChange} name="new-moniker" /> (Marilyn Monroe)</p>
 

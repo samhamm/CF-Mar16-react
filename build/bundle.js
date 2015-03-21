@@ -90,6 +90,10 @@ var CelebForm = React.createClass({displayName: "CelebForm",
     return (
 
       React.createElement("form", {onSubmit: this.profileSubmit}, 
+        React.createElement("h3", null, "Data Entry Instructions"), 
+        React.createElement("h4", null, "1. Most data can be pulled from Wikipedia and www.findagrave.com; do not worry about giving citations."), 
+        React.createElement("h4", null, "2. For the coordinates, look for them inside the link on Google Maps. Will look something like the example below."), 
+        React.createElement("h4", null, "3. THANKS! Every little bit helps. We can edit later."), 
         React.createElement("p", null, React.createElement("label", {htmlFor: "new-moniker"}, "Moniker: "), 
         React.createElement("input", {id: "new-moniker", type: "text", value: this.state.newCeleb.moniker, onChange: this.profileChange, name: "new-moniker"}), " (Marilyn Monroe)"), 
 
